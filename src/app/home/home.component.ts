@@ -9,15 +9,15 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent {
   // FIRST THING FIRST, INJECT HTTP 
   constructor(private http: HttpClient) { }
-  city: string = ''; // Mandalay
-  temp: string = ''; //26.7
+  city: string = 'Mandalay';
+  temp: string = '26.7';
   main: string = '';
-  desc: string = ''; //overcast clouds
+  desc: string = 'overcast clouds';
   icon: string = '';
-  speed: string = ''; //3.07
-  country: string = ''; //MM
-  visibility: string = ''; //10000
-  humidity: string = ''; //50
+  speed: string = '3.07';
+  country: string = 'MM';
+  visibility: string = '10000';
+  humidity: string = '50';
 
   getWeather() {
     //1. API Call
