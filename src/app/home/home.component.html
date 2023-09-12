@@ -1,6 +1,73 @@
-<form (ngSubmit)="getWeather()">
-    <label for="city">City Name: </label>
-    <input type="text" id="city" name="city" [(ngModel)]="city">
+<!-- NAVIGATION BAR  -->
+<nav>
+  <div class="brand">
+    <span class="w-1">W</span>
+    <span class="w-2">W</span>
+    <!-- <i class="fa-solid fa-snowflake"></i> -->
+  </div>
+  <div class="site-name">
+    <h1>Weather Whispers</h1>
+  </div>
+  <div class="some-txt">
+    <p>Ko Phyo</p>
+  </div>
+</nav>
 
-    <button type="submit">Search</button>
-</form>
+<!-- 3 PARTS IN THE BODY 1.DESC 2.SEARCH 3.WEATHER WINDOW -->
+<div class="content">
+  <!-- SEARCH BOX  -->
+  <div class="search">
+    <form class="form" (ngSubmit)="getWeather()">
+      <div class="input-box">
+        <input
+          type="text"
+          id="city"
+          name="city"
+          [(ngModel)]="city"
+          placeholder="Enter Any City Name"
+        />
+        <i class="bx bx-buildings"></i>
+      </div>
+
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <!-- WEATHER WINDOW  -->
+  <div class="weather-box">
+    <div class="icon-temp">
+      <i class="wi wi-snow-wind"></i>
+      <h2>{{ temp }}°C</h2>
+    </div>
+
+    <div class="image-box">
+      <img src="../../assets/img/snowy.jpg" alt="" />
+    </div>
+
+    <div class="info">
+      <h1>{{ city }} {{ country }}</h1>
+      <h3>{{ desc }}</h3>
+      <h2><i class="wi wi-owm-957"></i> {{ speed }}m/s</h2>
+      <h2><i class="fa-solid fa-eye"></i> {{ visibility }}m</h2>
+      <p>Humidity: {{humidity}}%</p>
+    </div>
+  </div>
+
+  <!-- JUST SOME TEXTS for footer -->
+  <div class="description">
+    <h2>
+      Discover the whispered secrets of cityscapes in every forecast. Our app
+      interprets the hushed conversations of weather across urban horizons.
+    </h2>
+  </div>
+</div>
+
+<!-- <h2>Today's weather</h2>
+
+  
+  
+  <h2>{{ main }}</h2>
+  
+  <h2>{{icon}}</h2>
+  
+   -->
