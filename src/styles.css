@@ -2,7 +2,9 @@
 body {
     overflow-y: auto;
     min-height: 100vh;
-    background-image: url('./assets/img/Picsart_23-09-12_10-24-38-976.png');
+    display: flex;
+    flex-direction: column;
+    background-image: url('./assets/img/bg-2.png');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
