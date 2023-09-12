@@ -17,7 +17,7 @@ export class HomeComponent {
   icon_path: string = 'wi-owm-800';
   speed: string = '3.07';
   country: string = 'MM';
-  visibility: string = '10000';
+  visibility: number = 10;
   humidity: string = '50';
 
   error_txt: string = 'error text appears here!';
@@ -42,6 +42,7 @@ export class HomeComponent {
       this.country = data['sys']['country'];
       this.visibility = data['visibility'];
 
+      this.visibility = this.visibility / 1000;
 
       // error_txt MSG 
       this.error_txt = data['cod'];
