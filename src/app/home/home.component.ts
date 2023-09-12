@@ -26,7 +26,7 @@ export class HomeComponent {
 
   getWeather() {
     //1. API Call
-    var result = this.http.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=32ad84d2a41f15df8af1a765bb38c530&units=metric`);
+    var result = this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=32ad84d2a41f15df8af1a765bb38c530&units=metric`);
 
     //2. Get a Observable
     console.log(result); //observable
