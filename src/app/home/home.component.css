@@ -42,6 +42,10 @@ nav h1:hover, p:hover {
         margin-left: -19px;
     }
 
+    .recommend-box p {
+        font-size: 16px;
+    }
+
     .search {
         width: 500px;
         height: 50px;
@@ -101,6 +105,9 @@ nav h1:hover, p:hover {
         transition: 0.4s;
     }
 
+    .recommend-box p {
+        font-size: 12px;
+    }
     .search {
         width: 400px;
         height: 40px;
@@ -174,6 +181,13 @@ nav h1:hover, p:hover {
         margin-left: -13px;
     }
     
+    .recommend-box {
+        right: 0;
+    }
+    .recommend-box p {
+        font-size: 9px;
+    }
+    
     .search {
         width: 300px;
         height: 40px;
@@ -216,7 +230,6 @@ nav h1:hover, p:hover {
 }
 .recommend-box p {
     color: #adefff;
-    font-size: 1.18vw;
 }
 
 /*  SEARCH BOX  */

@@ -13,16 +13,16 @@
   </div>
 </nav>
 
-<!-- 3 PARTS IN THE BODY 1.DESC 2.SEARCH 3.WEATHER WINDOW -->
+<!-- 4 PARTS IN THE BODY 1.DESC 2.SEARCH 3.search prompt 4.WEATHER WINDOW -->
 <div class="content flex">
   <!-- <div>
         <span class="error-txt">{{error_txt}}</span>
     </div> -->
 
-    <!-- SEARCH BOX  -->
-    <div class="search">
-      <form class="form flex" (ngSubmit)="getWeather()">
-        <div class="input-box flex">
+  <!-- SEARCH BOX  -->
+  <div class="search">
+    <form class="form flex" (ngSubmit)="getWeather()">
+      <div class="input-box flex">
         <input
           type="text"
           id="city"
@@ -37,10 +37,10 @@
     </form>
   </div>
 
-    <!-- RECOMMENDED SEARCH  -->
-    <div class="recommend-box">
-      <p>Prompts: Alaska, Dubai, Yangon</p>
-    </div>
+  <!-- SEARCH PROMPT -->
+  <div class="recommend-box">
+    <p>Alaska, Dubai, Yangon, . . .</p>
+  </div>
 
   <!-- WEATHER WINDOW  -->
   <div class="weather-box flex">
