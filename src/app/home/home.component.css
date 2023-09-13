@@ -280,13 +280,10 @@ input::placeholder {
     background-position: right;
 
 }
-
 .search .form .input-box i {
-    /* font-size: 36px; media query */
     position: absolute;
     right: 10%;
 }
-
 .search .form button {
     background: linear-gradient(#9fc3cc 0 0) left / var(--p, 0) no-repeat;
     border: 2px solid rgba(255, 255, 255, 0.37);
@@ -341,6 +338,5 @@ input::placeholder {
 /* FOOTER LINE */
 .description h2 {
     text-align: center;
-    color: #fff;
     margin-top: 40px;
 }
