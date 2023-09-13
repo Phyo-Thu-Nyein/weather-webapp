@@ -84,25 +84,6 @@ nav h1:hover, p:hover {
     }
 }
 
-/* @media(max-width:1300px) {
-
-    nav span,
-    nav h1 {
-        font-size: 30px;
-    }
-    nav p {
-        font-size: 17px;
-    }
-    nav .w-2 {
-        margin-left: -16px;
-    }
-
-    .weather-box .image-box {
-        width: 33%;
-        height: 75%;
-    }
-} */
-
 @media (max-width: 1024px) {
     nav {
         padding: 0 2%;
