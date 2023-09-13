@@ -15,13 +15,16 @@
 
 <!-- 3 PARTS IN THE BODY 1.DESC 2.SEARCH 3.WEATHER WINDOW -->
 <div class="content">
-    <!-- <div>
+  <!-- <div>
         <span class="error-txt">{{error_txt}}</span>
     </div> -->
-  <!-- SEARCH BOX  -->
-  <div class="search">
+
+
+    
+    <!-- SEARCH BOX  -->
+    <div class="search">
       <form class="form" (ngSubmit)="getWeather()">
-      <div class="input-box">
+        <div class="input-box">
         <input
           type="text"
           id="city"
@@ -36,16 +39,21 @@
     </form>
   </div>
 
+    <!-- RECOMMENDED SEARCH  -->
+    <div class="recommend-box">
+      <p>Prompts: Alaska, Dubai, Yangon</p>
+    </div>
+
   <!-- WEATHER WINDOW  -->
   <div class="weather-box">
     <!-- icon & temperature box  -->
     <div class="icon-temp">
-        <h1><i class="wi {{icon_path}}"></i></h1>
+      <h1><i class="wi {{ icon_path }}"></i></h1>
       <h2>{{ temp }}°C</h2>
     </div>
     <!-- image box  -->
     <div class="image-box">
-      <img src="{{bg_img}}" alt="" />
+      <img src="{{ bg_img }}" alt="" />
     </div>
     <!-- information box  -->
     <div class="info">
@@ -53,7 +61,7 @@
       <h3>{{ desc }}</h3>
       <h2><i class="wi wi-owm-957"></i> {{ speed }}m/s</h2>
       <h2><i class="fa-solid fa-eye"></i> {{ visibility }}km</h2>
-      <p>Humidity: {{humidity}}%</p>
+      <p>Humidity: {{ humidity }}%</p>
     </div>
   </div>
 
