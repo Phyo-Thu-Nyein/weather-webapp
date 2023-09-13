@@ -73,6 +73,10 @@ nav p:hover {
         font-size: 20px;
     }
 
+    .weather-box {
+    width: 70%;
+    height: 55vh;
+    }
     .weather-box .icon-temp {
         font-size: 50px;
     }
@@ -155,6 +159,10 @@ nav p:hover {
 @media (max-width:700px) {
     .weather-box .image-box {
         display: none;
+    }
+    .weather-box {
+        width: 50%;
+        height: 30vh;
     }
 }
 
@@ -318,8 +326,6 @@ nav p:hover {
     background: #16044d44;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    width: 70%;
-    height: 55vh;
     margin-top: 20px;
     border: 2px solid rgba(255, 255, 255, 0.301);
     border-radius: 30px;
