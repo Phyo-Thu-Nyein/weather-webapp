@@ -170,9 +170,6 @@ nav h1:hover, p:hover {
         margin-left: -13px;
     }
     
-    .recommend-box {
-        right: 0;
-    }
     .recommend-box p {
         font-size: 9px;
     }
@@ -207,7 +204,7 @@ nav h1:hover, p:hover {
         height: 100%;
         border-radius: 14.5%;
         border: none;
-        box-shadow: none;
+        box-shadow: 4px 0 10px black;
         opacity: .6;
     }
 }
