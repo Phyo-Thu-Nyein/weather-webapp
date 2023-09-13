@@ -15,32 +15,18 @@ nav {
     margin-bottom: 36px;
     padding: 0 12%;
 }
-
 nav span {
     /* font-size: 35px; */
     font-weight: 600;
     transition: .4s
 }
-
 nav span:hover {
     color: #14afe2;
     cursor: pointer;
 }
-
-/* nav .w-2 {
-    margin-left: -19px;
-} */
-
-/* nav h1 {
-    font-size: 35px;
-} */
 nav h1:hover {
     cursor: default;
 }
-
-/* nav p {
-    font-size: 20px;
-} */
 nav p:hover {
     cursor: default;
 }
@@ -209,22 +195,6 @@ nav p:hover {
     }
 }
 
-/* @media (max-width:425) {
-        .search {
-        width: 300px;
-        height: 40px;
-    }
-    .search .form .input-box input, 
-    .search .form button {
-        font-size: 14px;
-    }
-    .search .form .input-box i {
-        font-size: 20px;
-    }
-
-} */
-
-
 /* ----------------- ALL 3 PARTS (CONTENT) ALIGMENT ----------------- */
 .content {
     display: flex;
@@ -257,9 +227,6 @@ nav p:hover {
 
 /* ----------------------- SEARCH BOX ----------------------- */
 .search {
-    /* background-color: black; */
-    /* width: 500px;
-    height: 50px; */
     margin: 4.5vh 0 1vh;
 }
 
@@ -363,22 +330,6 @@ nav p:hover {
     align-items: center;
     gap: 20px;
 }
-
-/* .weather-box .icon-temp i {
-    font-size: ;
-
-}
-
-.weather-box .icon-temp h1 {
-    font-size: ;
-} */
-
-/* .weather-box .image-box {
-    background-color: #000000;
-     width: 33%;
-    height: 75%;
-} */
-
 .weather-box .image-box img {
     width: 100%;
     height: 100%;
@@ -398,16 +349,9 @@ nav p:hover {
 }
 
 
-/* ERROR MSG  */
-.error-txt {
-    font-size: 18px;
-    color: rgb(255, 111, 111);
-}
-
 /* ------------------ FOOTER LINE ------------------ */
 .description h2 {
     text-align: center;
     color: #fff;
-    /* font-size: 1.18vw; */
     margin-top: 40px;
 }
