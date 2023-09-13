@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent {
   // FIRST THING FIRST, INJECT HTTP 
   constructor(private http: HttpClient) { }
-  city: string = 'Alaska';
+  city: string = 'Yangon';
   temp: number = 26.7;
   main: string = '';
   desc: string = 'overcast clouds';
