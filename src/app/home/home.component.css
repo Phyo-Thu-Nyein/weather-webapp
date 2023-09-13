@@ -1,37 +1,34 @@
 /* READ ME!!!!
 MOST OF THE WIDTH AND FONT-SIZE PROPERTIES ARE IN THE MEDIA QUERY (@) */
 
-/* ------------------ NAVIGATION BAR ------------------ */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/*  NAVIGATION BAR  */
 nav {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background: rgba(0, 0, 0, 0.185);
     border-bottom: 2px solid rgba(255, 255, 255, 0.37);
-    /* width: 100%; */
     height: 4rem;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 36px;
     padding: 0 12%;
 }
 nav span {
-    /* font-size: 35px; */
     font-weight: 600;
-    transition: .4s
 }
 nav span:hover {
     color: #14afe2;
     cursor: pointer;
 }
-nav h1:hover {
-    cursor: default;
-}
-nav p:hover {
+nav h1:hover, p:hover {
     cursor: default;
 }
 
-/* -------------- MAKING THE SITE RESPONSIVE --------------  */
+/*  MAKING THE SITE RESPONSIVE   */
 @media(max-width:9000px) {
 
     nav span,
@@ -195,15 +192,13 @@ nav p:hover {
     }
 }
 
-/* ----------------- ALL 3 PARTS (CONTENT) ALIGMENT ----------------- */
+/*  ALL 3 PARTS (CONTENT) ALIGMENT  */
 .content {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
-/* ------------- RECOMMEND  BOX ----------------- */
+/*  RECOMMEND  BOX  */
 /*  THIS APPEARS WHEN FOCUS ON THE SEARCH  */
 .recommend-box {
     background: linear-gradient(#0e033171 0 0) left / var(--p, 0) no-repeat;
@@ -222,27 +217,19 @@ nav p:hover {
 .recommend-box p {
     color: #adefff;
     font-size: 1.18vw;
-
 }
 
-/* ----------------------- SEARCH BOX ----------------------- */
+/*  SEARCH BOX  */
 .search {
     margin: 4.5vh 0 1vh;
 }
-
 .search .form {
-    display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
     width: 100%;
     height: 100%;
 }
-
 .search .form .input-box {
-    /* background-color: white; */
-    display: flex;
-    align-items: center;
     position: relative;
     width: 100%;
     height: 100%;
@@ -259,7 +246,7 @@ nav p:hover {
     transition: .4s;
 }
 
-.search .form .input-box input::placeholder {
+input::placeholder {
     color: #fff;
 }
 
@@ -282,15 +269,11 @@ nav p:hover {
 }
 
 .search .form button {
-
     background: linear-gradient(#9fc3cc 0 0) left / var(--p, 0) no-repeat;
-
-    /* background-color: #082c4c; */
     border: 2px solid rgba(255, 255, 255, 0.37);
     width: 35%;
     height: 100%;
-    border-radius: 20px; 
-    /* font-size: 20px; media query*/
+    border-radius: 20px;
     font-weight: 600;
     color: #fff;
     transition: .4s, background-position 0s;
@@ -305,7 +288,7 @@ nav p:hover {
     background-position: right;
 }
 
-/* --------------- WEATHER WINDOW --------------- */
+/*  WEATHER WINDOW  */
 .weather-box {
     background: #16044d44;
     -webkit-backdrop-filter: blur(10px);
@@ -313,21 +296,16 @@ nav p:hover {
     margin-top: 20px;
     border: 2px solid rgba(255, 255, 255, 0.301);
     border-radius: 30px;
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.466);
 }
 
 
 .weather-box .icon-temp {
-    /* background-color: #000000; */
     width: 33%;
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 20px;
 }
 .weather-box .image-box img {
@@ -339,7 +317,6 @@ nav p:hover {
 }
 
 .weather-box .info {
-    /* background-color: black; */
     width: 33%;
     padding-left: 5%;
     display: flex;
@@ -349,7 +326,7 @@ nav p:hover {
 }
 
 
-/* ------------------ FOOTER LINE ------------------ */
+/* FOOTER LINE */
 .description h2 {
     text-align: center;
     color: #fff;

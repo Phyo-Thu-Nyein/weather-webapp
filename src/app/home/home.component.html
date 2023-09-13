@@ -1,5 +1,5 @@
 <!-- NAVIGATION BAR  -->
-<nav>
+<nav class="flex">
   <div class="brand">
     <span class="w-1">W</span>
     <span class="w-2">W</span>
@@ -14,15 +14,15 @@
 </nav>
 
 <!-- 3 PARTS IN THE BODY 1.DESC 2.SEARCH 3.WEATHER WINDOW -->
-<div class="content">
+<div class="content flex">
   <!-- <div>
         <span class="error-txt">{{error_txt}}</span>
     </div> -->
 
     <!-- SEARCH BOX  -->
     <div class="search">
-      <form class="form" (ngSubmit)="getWeather()">
-        <div class="input-box">
+      <form class="form flex" (ngSubmit)="getWeather()">
+        <div class="input-box flex">
         <input
           type="text"
           id="city"
@@ -43,9 +43,9 @@
     </div>
 
   <!-- WEATHER WINDOW  -->
-  <div class="weather-box">
+  <div class="weather-box flex">
     <!-- icon & temperature box  -->
-    <div class="icon-temp">
+    <div class="icon-temp flex">
       <h1><i class="wi {{ icon_path }}"></i></h1>
       <h2>{{ temp }}°C</h2>
     </div>
