@@ -54,6 +54,7 @@ nav h1:hover, p:hover {
         font-size: 20px;
     }
     .search .form .input-box i {
+        opacity: .75;
         font-size: 36px;
     }
     .search .form button {
