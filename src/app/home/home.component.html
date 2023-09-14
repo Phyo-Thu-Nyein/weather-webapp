@@ -15,10 +15,6 @@
 
 <!-- 4 PARTS IN THE BODY 1.DESC 2.SEARCH 3.search prompt 4.WEATHER WINDOW -->
 <div class="content flex">
-  <!-- <div>
-        <span class="error-txt">{{error_txt}}</span>
-    </div> -->
-
   <!-- SEARCH BOX  -->
   <div class="search">
     <form class="form flex" (ngSubmit)="getWeather()">
@@ -44,24 +40,30 @@
 
   <!-- WEATHER WINDOW  -->
   <div class="weather-box flex">
-    <!-- icon & temperature box  -->
-    <div class="icon-temp flex">
-      <h1><i class="wi {{ icon_path }}"></i></h1>
-      <h2>{{ temp }}°C</h2>
-    </div>
-    <!-- image box  -->
-    <div class="image-box">
-      <img src="{{ bg_img }}" alt="" />
-    </div>
-    <!-- information box  -->
-    <div class="info">
-      <h1>{{ city }} {{ country }}</h1>
-      <h3>{{ desc }}</h3>
-      <h2><i class="wi wi-owm-957"></i> {{ speed }}m/s</h2>
-      <h2><i class="fa-solid fa-eye"></i> {{ visibility }}km</h2>
-      <p>Humidity: {{ humidity }}%</p>
-    </div>
+    <ng-container *ngIf="error == false; else errorTemplate">
+      <!-- icon & temperature box  -->
+      <div class="icon-temp flex">
+        <h1><i class="wi {{ icon_path }}"></i></h1>
+        <h2>{{ temp }}°C</h2>
+      </div>
+      <!-- image box  -->
+      <div class="image-box">
+        <img src="{{ bg_img }}" alt="" />
+      </div>
+      <!-- information box  -->
+      <div class="info">
+        <h1>{{ city }} {{ country }}</h1>
+        <h3>{{ desc }}</h3>
+        <h2><i class="wi wi-owm-957"></i> {{ speed }}m/s</h2>
+        <h2><i class="fa-solid fa-eye"></i> {{ visibility }}km</h2>
+        <p>Humidity: {{ humidity }}%</p>
+      </div>
+    </ng-container>
   </div>
+
+  <ng-template #errorTemplate>
+    <h1 style="font-size: 50px; color: rgb(255, 173, 173);">{{ error_code }} {{ error_msg }}!</h1>
+  </ng-template>
 
   <!-- JUST SOME TEXTS for footer -->
   <div class="description">

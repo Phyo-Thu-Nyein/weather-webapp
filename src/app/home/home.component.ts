@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnDestroy } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ApiService } from '../service/api.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
-  // FIRST THING FIRST, INJECT HTTP 
-  constructor(private http: HttpClient) { }
+export class HomeComponent implements OnDestroy {
+  // FIRST THING FIRST, INJECT HTTP
+  constructor(private apiService: ApiService) {}
   city: string = 'Yangon';
   temp: number = 26.7;
   main: string = '';
@@ -20,81 +22,63 @@ export class HomeComponent {
   visibility: number = 10;
   humidity: string = '50';
 
-  error_txt: string = 'error text appears here!';
+  error: boolean = false;
+  error_code?: number;
+  error_msg?: string;
 
   bg_img: string = '../../assets/img/cloudy.jpg';
 
-  getWeather() {
-    //1. API Call
-    var result = this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=32ad84d2a41f15df8af1a765bb38c530&units=metric`);
+  weatherSub: Subscription = new Subscription();
 
-    //2. Get a Observable
+  getWeather() {
+    //1. API Call & 2. Get an Observable
+    var result = this.apiService.apiCall(
+      `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=32ad84d2a41f15df8af1a765bb38c530&units=metric`
+    );
     console.log(result); //observable
 
     //3. Subscribe to it
-    result.subscribe((data: any) => {
-      this.city = data['name'];
-      this.temp = data['main']['temp'];
-      this.humidity = data['main']['humidity'];
-      this.main = data['weather'][0]['main'];
-      this.desc = data['weather'][0]['description'];
-      this.speed = data['wind']['speed'];
-      this.country = data['sys']['country'];
-      this.visibility = data['visibility'];
+    this.weatherSub = result.subscribe({
+      next: (data: any) => {
+        this.city = data['name'];
+        this.temp = data['main']['temp'];
+        this.humidity = data['main']['humidity'];
+        this.main = data['weather'][0]['main'];
+        this.desc = data['weather'][0]['description'];
+        this.speed = data['wind']['speed'];
+        this.country = data['sys']['country'];
+        this.visibility = data['visibility'];
+        this.visibility = this.visibility / 1000;
 
-      this.visibility = this.visibility / 1000;
-
-      // error_txt MSG 
-      this.error_txt = data['cod'];
-      console.log(this.error_txt);
-      if (this.error_txt != '404') {
-        this.error_txt = "sorry soory sorry sorry"
+        //GET IMAGE & WEATHER ICON
+        if (this.temp <= 16) {
+          this.bg_img = '../../assets/img/snowy.jpg';
+          this.icon_path = 'wi-snow';
+          // this.icon = true;
+          // this.icon.classList.add("wi-snow-wind");
+        } else if (this.temp > 16 && this.temp <= 30) {
+          this.bg_img = '../../assets/img/rainy.jpg';
+          this.icon_path = 'wi-night-sprinkle';
+        } else {
+          this.bg_img = '../../assets/img/sunny.jpg';
+          this.icon_path = 'wi-day-sunny-overcast';
+          // "wi-day-sunny-overcast" "wi-owm-800"
+        }
+        this.error = false;
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log('Hello Error');
+        this.error = true;
+        this.error_code = err.error.cod;
+        this.error_msg = err.error.message;
       }
-      console.log(this.error_txt);
-
-
-      console.log(this.main);
-
-    //GET IMAGE & WEATHER ICON
-    if (this.temp <= 16) {
-      this.bg_img = "../../assets/img/snowy.jpg";
-      this.icon_path = "wi-snow";
-      // this.icon = true;
-      // this.icon.classList.add("wi-snow-wind");
-    }
-    else if (this.temp > 16 && this.temp <= 30) {
-      this.bg_img = "../../assets/img/rainy.jpg";
-      this.icon_path = "wi-night-sprinkle"
-
-    }
-    else {
-      this.bg_img = "../../assets/img/sunny.jpg";
-      this.icon_path = "wi-day-sunny-overcast";
-      // "wi-day-sunny-overcast" "wi-owm-800"
-    }
       
-      
-    }
-    )
-    // GET ICON 
-    // wont work this way "document.getElementsByClassName('wi')"!!!!
-
-  //  let icon = document.getElementsByClassName('wi')[1];
-  //  if (this.temp <= 16) {
-  //    icon.classList.add('wi-snow-wind');
-  //    // this.icon.classList.add("wi-snow-wind");
-  //  }
-  //  else if (this.temp > 16 && this.temp <= 30) {
-  //    this.bg_img = "../../assets/img/rainy.jpg";
-  //    icon.classList.add('wi-rain-wind');
-  //  }
-  //  else {
-  //    this.bg_img = "../../assets/img/sunny.jpg";
-  //    icon.classList.add('wi wi-night-sprinkle');
-  //  }
-
- 
-
+    });
   }
-
+  //4.Unsubscribe on fast api calls
+  ngOnDestroy() {
+    if (this.weatherSub) {
+      this.weatherSub.unsubscribe;
+    }
+  }
 }
