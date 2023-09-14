@@ -332,12 +332,6 @@ input::placeholder {
     align-items: flex-start;
 }
 
-.error {
-    font-size: 50px; 
-    color: rgb(255, 173, 173); 
-    text-align: center;
-}
-
 /* FOOTER LINE */
 .description h2 {
     text-align: center;
